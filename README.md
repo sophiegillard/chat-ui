@@ -79,7 +79,7 @@ These variables will enable the openID sign-in modal for users.
 You can use a few environment variables to customize the look and feel of chat-ui. These are by default:
 
 ```
-PUBLIC_APP_NAME=ChatUI
+PUBLIC_APP_NAME=Ares Chat
 PUBLIC_APP_ASSETS=chatui
 PUBLIC_APP_COLOR=blue
 PUBLIC_APP_DATA_SHARING=

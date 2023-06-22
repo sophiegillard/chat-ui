@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { base } from "$app/paths";
 	import { createEventDispatcher } from "svelte";
-
-	import Logo from "$lib/components/icons/Logo.svelte";
+	import SmallLogoGreen from "./icons/small_logo_green.png";
 	import { switchTheme } from "$lib/switchTheme";
 	import { PUBLIC_APP_NAME, PUBLIC_ORIGIN } from "$env/static/public";
 	import NavConversationItem from "./NavConversationItem.svelte";
@@ -23,7 +22,7 @@
 
 <div class="sticky top-0 flex flex-none items-center justify-between px-3 py-3.5 max-sm:pt-0">
 	<a class="flex items-center rounded-xl text-lg font-semibold" href="{PUBLIC_ORIGIN}{base}/">
-		<Logo classNames="mr-1" />
+		<img src={SmallLogoGreen} alt="Logo" class="mr-1 w-8 flex-none" />
 		{PUBLIC_APP_NAME}
 	</a>
 	<a
@@ -55,7 +54,7 @@
 			>
 			<button
 				type="submit"
-				class="ml-auto h-6 flex-none items-center gap-1.5 rounded-md border bg-white px-2 text-gray-700 shadow-sm group-hover:flex hover:shadow-none dark:border-gray-600 dark:bg-gray-600 dark:text-gray-400 dark:hover:text-gray-300 md:hidden"
+				class="ml-auto h-6 flex-none items-center gap-1.5 rounded-md border bg-white px-2 text-gray-700 shadow-sm hover:shadow-none group-hover:flex dark:border-gray-600 dark:bg-gray-600 dark:text-gray-400 dark:hover:text-gray-300 md:hidden"
 			>
 				Sign Out
 			</button>
