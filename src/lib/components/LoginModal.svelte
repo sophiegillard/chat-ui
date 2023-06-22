@@ -3,6 +3,7 @@
 	import { base } from "$app/paths";
 	import { page } from "$app/stores";
 	import { PUBLIC_APP_DATA_SHARING, PUBLIC_APP_NAME, PUBLIC_VERSION } from "$env/static/public";
+	import LogoHuggingFaceBorderless from "$lib/components/icons/small_logo_green.png";
 	import Modal from "$lib/components/Modal.svelte";
 	import type { LayoutData } from "../../routes/$types";
 	export let settings: LayoutData["settings"];
@@ -18,11 +19,6 @@
 		<h2 class="flex items-center text-2xl font-semibold text-gray-800">
 			<img src={SmallLogoGreen} alt="Logo" class="mr-1 w-12 flex-none" />
 			{PUBLIC_APP_NAME}
-			<div
-				class="ml-3 flex h-6 items-center rounded-lg border border-gray-100 bg-gray-50 px-2 text-base text-gray-400"
-			>
-				v{PUBLIC_VERSION}
-			</div>
 		</h2>
 		<p class="px-4 text-lg font-semibold leading-snug text-gray-800 sm:px-12">
 			This application is for demonstration purposes only.

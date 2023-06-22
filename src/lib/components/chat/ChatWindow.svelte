@@ -3,6 +3,7 @@
 	import { createEventDispatcher } from "svelte";
 
 	import CarbonSendAltFilled from "~icons/carbon/send-alt-filled";
+	import Microphone from "~icons/carbon/microphone-filled";
 	import CarbonExport from "~icons/carbon/export";
 	import CarbonStopFilledAlt from "~icons/carbon/stop-filled-alt";
 	import EosIconsLoading from "~icons/eos-icons/loading";
@@ -87,6 +88,13 @@
 			{isReadOnly ? 'opacity-30' : ''}"
 		>
 			<div class="flex w-full flex-1 border-none bg-transparent">
+				<button
+					class="btn mx-1 my-1 h-[2.4rem] self-end rounded-lg bg-transparent p-1 px-[0.7rem] text-gray-400 enabled:hover:text-gray-700 disabled:opacity-60 enabled:dark:hover:text-gray-100 dark:disabled:opacity-40"
+					disabled={!message || isReadOnly}
+					type="submit"
+				>
+					<Microphone />
+				</button>
 				<ChatInput
 					placeholder="Ask anything"
 					bind:value={message}
@@ -100,19 +108,19 @@
 
 				{#if loading}
 					<button
-						class="btn mx-1 my-1 inline-block h-[2.4rem] self-end rounded-lg bg-transparent p-1 px-[0.7rem] text-gray-400 disabled:opacity-60 enabled:hover:text-gray-700 dark:disabled:opacity-40 enabled:dark:hover:text-gray-100 md:hidden"
+						class="btn mx-1 my-1 inline-block h-[2.4rem] self-end rounded-lg bg-transparent p-1 px-[0.7rem] text-gray-400 enabled:hover:text-gray-700 disabled:opacity-60 enabled:dark:hover:text-gray-100 dark:disabled:opacity-40 md:hidden"
 						on:click={() => dispatch("stop")}
 					>
 						<CarbonStopFilledAlt />
 					</button>
 					<div
-						class="mx-1 my-1 hidden h-[2.4rem] items-center p-1 px-[0.7rem] text-gray-400 disabled:opacity-60 enabled:hover:text-gray-700 dark:disabled:opacity-40 enabled:dark:hover:text-gray-100 md:flex"
+						class="mx-1 my-1 hidden h-[2.4rem] items-center p-1 px-[0.7rem] text-gray-400 enabled:hover:text-gray-700 disabled:opacity-60 enabled:dark:hover:text-gray-100 dark:disabled:opacity-40 md:flex"
 					>
 						<EosIconsLoading />
 					</div>
 				{:else}
 					<button
-						class="btn mx-1 my-1 h-[2.4rem] self-end rounded-lg bg-transparent p-1 px-[0.7rem] text-gray-400 disabled:opacity-60 enabled:hover:text-gray-700 dark:disabled:opacity-40 enabled:dark:hover:text-gray-100"
+						class="btn mx-1 my-1 h-[2.4rem] self-end rounded-lg bg-transparent p-1 px-[0.7rem] text-gray-400 enabled:hover:text-gray-700 disabled:opacity-60 enabled:dark:hover:text-gray-100 dark:disabled:opacity-40"
 						disabled={!message || isReadOnly}
 						type="submit"
 					>
@@ -137,7 +145,7 @@
 					type="button"
 					on:click={() => dispatch("share")}
 				>
-					<CarbonExport class="text-[.6rem] sm:mr-1.5 sm:text-primary-500" />
+					<CarbonExport class="sm:text-primary-500 text-[.6rem] sm:mr-1.5" />
 					<div class="max-sm:hidden">Share this conversation</div>
 				</button>
 			{/if}

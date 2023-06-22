@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PUBLIC_APP_NAME, PUBLIC_VERSION } from "$env/static/public";
+	import { PUBLIC_APP_NAME } from "$env/static/public";
 	import { PUBLIC_ANNOUNCEMENT_BANNERS } from "$env/static/public";
 	import { createEventDispatcher } from "svelte";
 	import IconChevron from "$lib/components/icons/IconChevron.svelte";
@@ -35,11 +35,6 @@
 				<img src={SmallLogoGreen} alt="Logo" class="mr-1 w-12 flex-none" />
 
 				{PUBLIC_APP_NAME}
-				<div
-					class="ml-3 flex h-6 items-center rounded-lg border border-gray-100 bg-gray-50 px-2 text-base text-gray-400 dark:border-gray-700/60 dark:bg-gray-800"
-				>
-					v{PUBLIC_VERSION}
-				</div>
 			</div>
 			<p class="text-base text-gray-600 dark:text-gray-400">
 				Making the community's best AI chat models available to everyone.
@@ -61,23 +56,6 @@
 		{#if isModelsModalOpen}
 			<ModelsModal {settings} {models} on:close={() => (isModelsModalOpen = false)} />
 		{/if}
-		<div class="overflow-hidden rounded-xl border dark:border-gray-800">
-			<div class="flex p-3">
-				<div>
-					<div class="text-sm text-gray-600 dark:text-gray-400">Current Model</div>
-					<div class="font-semibold">{currentModel.displayName}</div>
-				</div>
-				{#if models.length > 1}
-					<button
-						type="button"
-						on:click={() => (isModelsModalOpen = true)}
-						class="btn ml-auto flex h-7 w-7 self-start rounded-full bg-gray-100 p-1 text-xs hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-600"
-						><IconChevron /></button
-					>
-				{/if}
-			</div>
-			<ModelCardMetadata variant="dark" model={currentModel} />
-		</div>
 	</div>
 	{#if currentModelMetadata.promptExamples}
 		<div class="lg:col-span-3 lg:mt-12">
