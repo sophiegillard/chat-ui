@@ -9,12 +9,17 @@ export default {
 	darkMode: "class",
 	content: ["./src/**/*.{html,js,svelte,ts}"],
 	theme: {
+		fontFamily: {
+			// sans: ['"Inter"', ...defaultTheme.fontFamily.sans],
+			'industry': ['industry', 'sans-serif']
+		},
 		extend: {
 			colors: {
 				primary: colors[process.env.PUBLIC_APP_COLOR],
 			},
 			// fontFamily: {
-			// 	sans: ['"Inter"', ...defaultTheme.fontFamily.sans]
+			// 	// sans: ['"Inter"', ...defaultTheme.fontFamily.sans],
+				
 			// },
 			fontSize: {
 				xxs: "0.625rem",

@@ -4,6 +4,7 @@
 
 	import CarbonSendAltFilled from "~icons/carbon/send-alt-filled";
 	import Microphone from "~icons/carbon/microphone-filled";
+	import PaperClip from "~icons/carbon/document";
 	import CarbonExport from "~icons/carbon/export";
 	import CarbonStopFilledAlt from "~icons/carbon/stop-filled-alt";
 	import EosIconsLoading from "~icons/eos-icons/loading";
@@ -105,6 +106,13 @@
 					maxRows={4}
 					disabled={isReadOnly}
 				/>
+
+				<button
+					class="btn mx-1 my-1 h-[2.4rem] self-end rounded-lg bg-transparent p-1 px-[0.7rem] text-gray-400 enabled:hover:text-gray-700 disabled:opacity-60 enabled:dark:hover:text-gray-100 dark:disabled:opacity-40"
+					on:click={() => dispatch("stop")}
+				>
+					<PaperClip />
+				</button>
 
 				{#if loading}
 					<button

@@ -16,8 +16,8 @@
 	<div
 		class="from-primary-500/40 via-primary-500/10 to-primary-500/0 flex w-full flex-col items-center gap-6 bg-gradient-to-t px-4 pb-10 pt-9 text-center "
 	>
-		<h2 class="flex items-center text-2xl font-semibold text-gray-800">
-			<img src={SmallLogoGreen} alt="Logo" class="mr-1 w-12 flex-none" />
+		<h2 class="font-industry flex items-end text-2xl font-semibold text-gray-800">
+			<img src={SmallLogoGreen} alt="Logo" class=" mr-1 w-12 flex-none" />
 			{PUBLIC_APP_NAME}
 		</h2>
 		<p class="px-4 text-lg font-semibold leading-snug text-gray-800 sm:px-12">

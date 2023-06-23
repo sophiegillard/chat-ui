@@ -2,17 +2,15 @@
 	import { PUBLIC_APP_NAME } from "$env/static/public";
 	import { PUBLIC_ANNOUNCEMENT_BANNERS } from "$env/static/public";
 	import { createEventDispatcher } from "svelte";
-	import IconChevron from "$lib/components/icons/IconChevron.svelte";
 	import CarbonArrowUpRight from "~icons/carbon/arrow-up-right";
 	import AnnouncementBanner from "../AnnouncementBanner.svelte";
 	import ModelsModal from "../ModelsModal.svelte";
 	import type { Model } from "$lib/types/Model";
-	import ModelCardMetadata from "../ModelCardMetadata.svelte";
 	import type { LayoutData } from "../../../routes/$types";
 	import { findCurrentModel } from "$lib/utils/models";
 	import SmallLogoGreen from "../icons/small_logo_green.png";
+	import SmallLogoBlue from "../icons/small_logo_blue.png";
 
-	export let currentModel: Model;
 	export let settings: LayoutData["settings"];
 	export let models: Model[];
 
@@ -30,9 +28,10 @@
 <div class="my-auto grid gap-8 lg:grid-cols-3">
 	<div class="lg:col-span-1">
 		<div>
-			<div class="mb-3 flex items-center text-2xl font-semibold">
+			<div class="font-industry mb-3 flex items-end text-3xl font-semibold">
 				<!-- svelte-ignore a11y-img-redundant-alt -->
-				<img src={SmallLogoGreen} alt="Logo" class="mr-1 w-12 flex-none" />
+				<img src={SmallLogoGreen} alt="Logo" class=" mr-1 hidden w-12 flex-none dark:block" />
+				<img src={SmallLogoBlue} alt="Logo" class=" mr-1 w-12 flex-none dark:hidden" />
 
 				{PUBLIC_APP_NAME}
 			</div>

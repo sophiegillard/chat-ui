@@ -2,10 +2,15 @@
 	import { base } from "$app/paths";
 	import { createEventDispatcher } from "svelte";
 	import SmallLogoGreen from "./icons/small_logo_green.png";
+	import SmallLogoBlue from "./icons/small_logo_blue.png";
 	import { switchTheme } from "$lib/switchTheme";
-	import { PUBLIC_APP_NAME, PUBLIC_ORIGIN } from "$env/static/public";
+	import { PUBLIC_APP_NAME, PUBLIC_ORIGIN, PUBLIC_WEBSITE_NAME } from "$env/static/public";
 	import NavConversationItem from "./NavConversationItem.svelte";
 	import type { LayoutData } from "../../routes/$types";
+	import IoLogoFacebook from "svelte-icons/io/IoLogoFacebook.svelte";
+	import IoLogoTwitter from "svelte-icons/io/IoLogoTwitter.svelte";
+	import IoLogoInstagram from "svelte-icons/io/IoLogoInstagram.svelte";
+	import FaDiscord from "svelte-icons/fa/FaDiscord.svelte";
 
 	const dispatch = createEventDispatcher<{
 		shareConversation: { id: string; title: string };
@@ -21,8 +26,12 @@
 </script>
 
 <div class="sticky top-0 flex flex-none items-center justify-between px-3 py-3.5 max-sm:pt-0">
-	<a class="flex items-center rounded-xl text-lg font-semibold" href="{PUBLIC_ORIGIN}{base}/">
-		<img src={SmallLogoGreen} alt="Logo" class="mr-1 w-8 flex-none" />
+	<a
+		class="font-industry flex items-end rounded-xl text-lg font-semibold"
+		href="{PUBLIC_ORIGIN}{base}/"
+	>
+		<img src={SmallLogoGreen} alt="Logo" class=" mr-1 hidden w-8 flex-none  dark:block" />
+		<img src={SmallLogoBlue} alt="Logo" class=" mr-1 w-8 flex-none dark:hidden" />
 		{PUBLIC_APP_NAME}
 	</a>
 	<a
@@ -67,6 +76,7 @@
 	>
 		Theme
 	</button>
+
 	<button
 		on:click={() => dispatch("clickSettings")}
 		type="button"
@@ -90,4 +100,29 @@
 			About & Privacy
 		</a>
 	{/if}
+	<div
+		class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-3 pr-2 text-gray-500 dark:text-gray-400"
+	>
+		<a
+			class="flex h-6 flex-none items-center gap-1.5 rounded-lg pl-3 pr-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+			target="_blank"
+			href={`https://www.facebook.com/sharer/sharer.php?u=https://www.arescreative.fr/&amp;src=sdkpreparse`}
+			><IoLogoFacebook /></a
+		>
+		<a
+			class="flex h-6 flex-none items-center gap-1.5 rounded-lg pl-3 pr-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+			target="_blank"
+			href="https://www.instagram.com/"><IoLogoInstagram /></a
+		>
+		<a
+			class="flex h-6 flex-none items-center gap-1.5 rounded-lg pl-3 pr-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+			target="_blank"
+			href="https://discord.com/"><FaDiscord /></a
+		>
+		<a
+			class="flex h-6 flex-none items-center gap-1.5 rounded-lg pl-3 pr-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+			target="_blank"
+			href="http://twitter.com/intent/tweet/?url=https://www.arescreative.fr/"><IoLogoTwitter /></a
+		>
+	</div>
 </div>
